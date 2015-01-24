@@ -27,7 +27,9 @@ public class PlayerController : MonoBehaviour {
 	public float superSpeed = 0.0f;
 	public bool superSpeedBoost = false;
 	//ShootEmUP
-
+	//pill and Zoom
+	public bool zoomCheck = false;
+	public Camera camera;
 	//*****//
 
 	//Components
@@ -41,6 +43,9 @@ public class PlayerController : MonoBehaviour {
 	}
 	void Update () 
 	{
+		if (zoomCheck == true && camera.orthographicSize > 2)
+			//onYourFunction();
+			camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, camera.orthographicSize - 3, Time.deltaTime);
 		if (Input.GetKeyDown (KeyCode.W)) 
 		{
 			canJump = true;
@@ -106,9 +111,6 @@ public class PlayerController : MonoBehaviour {
 			StartCoroutine(SmackOff());
 
 		}
-
-
-
 		//Debug.Log (rigidbody2D.velocity.x);
 	}
 	void Flip()
@@ -123,6 +125,14 @@ public class PlayerController : MonoBehaviour {
 		yield return new WaitForSeconds(1.0f);
 		smackArea.gameObject.SetActive (false);
 		//smackOn = false;
+	}
+	void OnCollisionEnter2D(Collision2D obj)
+	{
+		if (obj.gameObject.tag == "Pill") 
+		{
+			Debug.Log("aha deydi");
+			zoomCheck = true;
+		}
 	}
 
 }
