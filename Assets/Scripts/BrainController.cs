@@ -17,13 +17,14 @@ public class BrainController : MonoBehaviour {
     void Awake()
     {
         //newPosition = transform.position;
+        state = CellLine.Down;
+        rigidbody2D.velocity = new Vector2(8.0f, 0.0f);
     }
     
     // Use this for initialization
 	void Start () 
     {
-        state = CellLine.Down;
-        rigidbody2D.velocity = new Vector2(8.0f, 0.0f);
+        
 	}
 	
 	// Update is called once per frame
