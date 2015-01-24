@@ -30,9 +30,9 @@ public class BrainController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
-        Vector3 positionDown = new Vector2(transform.position.x, 0);
-        Vector3 positionMiddle = new Vector2(transform.position.x, 2);
-        Vector3 positionUp = new Vector2(transform.position.x, 4);
+        //Vector3 positionDown = new Vector2(transform.position.x, 0);
+        //Vector3 positionMiddle = new Vector2(transform.position.x, 2);
+        //Vector3 positionUp = new Vector2(transform.position.x, 4);
         
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
@@ -44,7 +44,7 @@ public class BrainController : MonoBehaviour {
             {
                 // go Down State
                 state = CellLine.Down;
-                rigidbody2D.velocity = new Vector2(8.0f, -8.0f);
+                rigidbody2D.velocity = new Vector2(4.0f, -8.0f);
                 //transform.position = positionDown;   
                
             }
@@ -53,7 +53,7 @@ public class BrainController : MonoBehaviour {
                 // go Middle State
                 state = CellLine.Middle;
                 //transform.position = positionMiddle;
-                rigidbody2D.velocity = new Vector2(8.0f, -8.0f);
+                rigidbody2D.velocity = new Vector2(4.0f, -8.0f);
             }
         }
 
@@ -64,14 +64,14 @@ public class BrainController : MonoBehaviour {
                 // go Middle State
                 state = CellLine.Middle;
                 //transform.position = positionMiddle;
-                rigidbody2D.velocity = new Vector2(8.0f, 8.0f);
+                rigidbody2D.velocity = new Vector2(4.0f, 8.0f);
             }
             else if ((state == CellLine.Middle))
             {
                 // go Up State
                 state = CellLine.Up;
                 //transform.position = positionUp;
-                rigidbody2D.velocity = new Vector2(8.0f, 8.0f);
+                rigidbody2D.velocity = new Vector2(4.0f, 8.0f);
             }
             else if ((state == CellLine.Up))
             {

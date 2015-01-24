@@ -28,25 +28,41 @@ public class PlayerController : MonoBehaviour {
 	public bool superSpeedBoost = false;
 	//ShootEmUP
 	//pill and Zoom
-	public bool zoomCheck = false;
+	public bool zoomCheck;
 	public Camera camera;
 	//*****//
 
 	//Components
 	public GameObject smackArea;
+    public GameObject brainScene;
+    public GameObject mainScene;
 
 
 	void Start () 
 	{
-
 		//renderer = GetComponent<MeshRenderer>();
+        brainScene = GameObject.FindGameObjectWithTag("BrainScene");
+        brainScene.SetActive(false);
+        mainScene = GameObject.FindGameObjectWithTag("MainScene");
 	}
 	void Update () 
 	{
-		if (zoomCheck == true && camera.orthographicSize > 2)
-			//onYourFunction();
-			camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, camera.orthographicSize - 3, Time.deltaTime);
-		if (Input.GetKeyDown (KeyCode.W)) 
+        if (zoomCheck == true && camera.orthographicSize > 0)
+        {
+            camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, camera.orthographicSize - 5, Time.deltaTime);
+            //brainScene.SetActive(true);
+            //mainScene.SetActive(false);    
+        }
+
+        if (zoomCheck == true && camera.orthographicSize <= 0)
+        {
+            //camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, camera.orthographicSize - 5, Time.deltaTime);
+            camera.GetComponent<AudioListener>().enabled = false;
+            brainScene.SetActive(true);
+            mainScene.SetActive(false);    
+        }
+		
+        if (Input.GetKeyDown (KeyCode.W)) 
 		{
 			canJump = true;
 
@@ -130,7 +146,7 @@ public class PlayerController : MonoBehaviour {
 	{
 		if (obj.gameObject.tag == "Pill") 
 		{
-			Debug.Log("aha deydi");
+			//Debug.Log("aha deydi");
 			zoomCheck = true;
 		}
 	}
