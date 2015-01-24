@@ -4,12 +4,14 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	//movement variables
+	public float moveSpeed = 5;
+	private bool onRight = true;
 	//bool
 	public bool canJump;
 	private bool Jump;
 	public bool onGround;
 	//dynamic parameters
-	public float speed = 5.0f;
+	//public float speed = 5.0f;
 	public float jumpForce = 500.0f;
 	//components
 	public Transform groundCheck;
@@ -18,6 +20,9 @@ public class PlayerController : MonoBehaviour {
 	//JumpAndSmack//
 	public bool canSmack = false;
 	public float smackForce = -300.0f;
+	public float smackTime = 0.1f;
+	public bool smackOn = false;
+
 	//SuperSpeedAndDissolveEnemy//
 	public float superSpeed = 0.0f;
 	public bool superSpeedBoost = false;
@@ -60,7 +65,16 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate()
 	{
 		onGround = Physics2D.OverlapCircle(groundCheck.position, 0.20f, groundLayer);
-		rigidbody2D.velocity = new Vector2 (speed + superSpeed, rigidbody2D.velocity.y);
+		//walkinggg
+		float move = Input.GetAxis("Horizontal");
+		rigidbody2D.velocity = new Vector2(move * moveSpeed, rigidbody2D.velocity.y);
+		if (move > 0 && (!onRight ))
+			Flip();
+		else if (move < 0 && onRight)
+			Flip();
+
+		//---------------------//
+		//rigidbody2D.velocity = new Vector2 (speed + superSpeed, rigidbody2D.velocity.y);
 
 		Jump = (canJump && onGround);
 		if(Jump)
@@ -73,17 +87,42 @@ public class PlayerController : MonoBehaviour {
 		if (canSmack && !onGround)
 		{
 			rigidbody2D.AddForce(new Vector2(0,smackForce));
-			//canSmack = false;
+			smackOn = true;
+				//canSmack = false;
 		}
 		if(canSmack && onGround)
 		{
-			smackArea.gameObject.SetActive (true);
+			if (smackOn)
+			{
+
+				Camera.main.GetComponent<PerlinShake>().PlayShake();
+				smackArea.gameObject.SetActive (true);
+			}
 		}
 		if (onGround) 
 		{
 			canSmack = false;
+			smackOn = false;
+			StartCoroutine(SmackOff());
+
 		}
-		Debug.Log (rigidbody2D.velocity.x);
+
+
+
+		//Debug.Log (rigidbody2D.velocity.x);
+	}
+	void Flip()
+	{
+		onRight = !onRight;
+		Vector3 characterScale  = transform.localScale;
+		characterScale.x *= -1;
+		transform.localScale = characterScale;
+	}
+	public IEnumerator SmackOff()
+	{
+		yield return new WaitForSeconds(1.0f);
+		smackArea.gameObject.SetActive (false);
+		//smackOn = false;
 	}
 
 }
