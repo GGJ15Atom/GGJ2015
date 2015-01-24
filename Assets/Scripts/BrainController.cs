@@ -82,7 +82,7 @@ public class BrainController : MonoBehaviour {
         if (state == CellLine.Down && transform.position.y < 0.0f)
             rigidbody2D.velocity = new Vector2(8.0f, 0.0f);
 
-        else if (state == CellLine.Middle && transform.position.y > 1.9f && transform.position.y < 2.1f)
+        else if (state == CellLine.Middle && transform.position.y > 1.8f && transform.position.y < 2.3f)
             rigidbody2D.velocity = new Vector2(8.0f, 0.0f);
 
         else if (state == CellLine.Up && transform.position.y > 4.0f)

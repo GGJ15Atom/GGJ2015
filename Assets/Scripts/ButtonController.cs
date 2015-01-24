@@ -21,7 +21,7 @@ public class ButtonController : MonoBehaviour {
     public void LoadANewLevel()
     {
         if(gameObject.tag == "PlayGame")
-            Application.LoadLevel(1);
+            Application.LoadLevel(3);
 
         if(gameObject.tag == "Credits")
             Application.LoadLevel(2);
