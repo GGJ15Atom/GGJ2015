@@ -42,6 +42,10 @@ public class PlayerController : MonoBehaviour {
 	private Animator anim;
 	public GameObject brainZoom;
 
+    public bool brainToMain = false;
+
+    private Vector3 gangPos;
+
 	void Start () 
 	{
 		//renderer = GetComponent<MeshRenderer>();
@@ -65,10 +69,28 @@ public class PlayerController : MonoBehaviour {
 		if (zoomCheck == true && camera.orthographicSize <= 0)
 		{
 			camera.GetComponent<AudioListener>().enabled = false;
-			brainScene.SetActive(true);
+			
+            brainScene.SetActive(true);
 			mainScene.SetActive(false);
 			brainZoom.SetActive(false);
+            zoomCheck = false;
+            //gangPos = transform.position;
+            rigidbody2D.isKinematic = true;
+           
 		}
+
+        //if (zoomCheck == false && mainScene.activeInHierarchy == false)
+        //{
+        //    mainScene.SetActive(true);
+        //}
+
+        if (brainToMain == true)
+        {
+            mainScene.SetActive(true);
+            //transform.position = gangPos;
+            rigidbody2D.isKinematic = false;
+            brainToMain = false;
+        }
 		
 		if (Input.GetKeyDown (KeyCode.W)) 
 		{
@@ -163,6 +185,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			//Debug.Log("aha deydi");
 			zoomCheck = true;
+            Destroy(obj.gameObject);
 		}
 	}
 
