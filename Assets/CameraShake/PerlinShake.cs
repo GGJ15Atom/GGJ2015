@@ -32,7 +32,7 @@ public class PerlinShake : MonoBehaviour {
 			test = false;
 			PlayShake();
 		}
-		tempPosition = new Vector3 (PlayerPosition.position.x, PlayerPosition.position.y, -10.0f);
+		tempPosition = new Vector3 (PlayerPosition.position.x, Camera.main.transform.position.y, -10.0f);
 		Camera.main.transform.position = tempPosition;
 		//originalCamPos = Camera.main.transform.position;
 	}
@@ -64,7 +64,7 @@ public class PerlinShake : MonoBehaviour {
 
 			x *= magnitude * damper;
 			y *= magnitude * damper;
-			Debug.Log(x);
+			//Debug.Log(x);
 			Camera.main.transform.position = new Vector3(originalCamPos.x+ x,originalCamPos.y+y , originalCamPos.z);
 				
 			yield return null;

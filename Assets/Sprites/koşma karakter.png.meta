@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: dd482aa5bf5fb914c9926fce55d5c657
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: "ko\u015Fma karakter_0"
+    21300002: "ko\u015Fma karakter_1"
+    21300004: "ko\u015Fma karakter_2"
+    21300006: "ko\u015Fma karakter_3"
+    21300008: "ko\u015Fma karakter_4"
+    21300010: "ko\u015Fma karakter_5"
+    21300012: "ko\u015Fma karakter_6"
+    21300014: "ko\u015Fma karakter_7"
+    21300016: "ko\u015Fma karakter_8"
+    21300018: "ko\u015Fma karakter_9"
+    21300020: "ko\u015Fma karakter_10"
+    21300022: "ko\u015Fma karakter_11"
+    21300024: "ko\u015Fma karakter_12"
+    21300026: "ko\u015Fma karakter_13"
+    21300028: "ko\u015Fma karakter_14"
+    21300030: "ko\u015Fma karakter_15"
+    21300032: "ko\u015Fma karakter_16"
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: "ko\u015Fma karakter_0"
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 597
+        width: 169
+        height: 246
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "ko\u015Fma karakter_1"
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 595
+        width: 165
+        height: 246
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "ko\u015Fma karakter_2"
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 595
+        width: 155
+        height: 246
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "ko\u015Fma karakter_3"
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 595
+        width: 152
+        height: 244
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "ko\u015Fma karakter_4"
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 595
+        width: 151
+        height: 248
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "ko\u015Fma karakter_5"
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 595
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "ko\u015Fma karakter_6"
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 595
+        width: 140
+        height: 248
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "ko\u015Fma karakter_7"
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 595
+        width: 135
+        height: 250
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "ko\u015Fma karakter_8"
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 263
+        width: 143
+        height: 248
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "ko\u015Fma karakter_9"
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 262
+        width: 148
+        height: 249
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "ko\u015Fma karakter_11"
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 263
+        width: 158
+        height: 246
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "ko\u015Fma karakter_12"
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 267
+        width: 177
+        height: 242
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "ko\u015Fma karakter_13"
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 271
+        width: 178
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "ko\u015Fma karakter_14"
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 271
+        width: 185
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "ko\u015Fma karakter_15"
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 271
+        width: 184
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "ko\u015Fma karakter_16"
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 265
+        width: 156
+        height: 242
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour {
 	public GameObject smackArea;
     public GameObject brainScene;
     public GameObject mainScene;
+	//Animation
+	private Animator anim;
 
 
 	void Start () 
@@ -44,6 +46,7 @@ public class PlayerController : MonoBehaviour {
         brainScene = GameObject.FindGameObjectWithTag("BrainScene");
         brainScene.SetActive(false);
         mainScene = GameObject.FindGameObjectWithTag("MainScene");
+		anim = GetComponent<Animator> ();
 	}
 	void Update () 
 	{
@@ -86,8 +89,10 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate()
 	{
 		onGround = Physics2D.OverlapCircle(groundCheck.position, 0.20f, groundLayer);
+		//anim ground == onground olcak*************************************************************
 		//walkinggg
 		float move = Input.GetAxis("Horizontal");
+		anim.SetFloat("speed", Mathf.Abs(move));
 		rigidbody2D.velocity = new Vector2(move * moveSpeed, rigidbody2D.velocity.y);
 		if (move > 0 && (!onRight ))
 			Flip();
@@ -117,6 +122,7 @@ public class PlayerController : MonoBehaviour {
 			{
 
 				Camera.main.GetComponent<PerlinShake>().PlayShake();
+				//anim smack gelcek*****************************************************
 				smackArea.gameObject.SetActive (true);
 			}
 		}
