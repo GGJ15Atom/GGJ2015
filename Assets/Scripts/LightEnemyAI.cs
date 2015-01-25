@@ -30,6 +30,7 @@ public class LightEnemyAI : MonoBehaviour {
 	void Start () 
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
+	
 	}
 
 	void Update () 

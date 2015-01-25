@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
-
+	//static variables
+	public static int Mana = 50;
+	public static int Health = 100;
 	//movement variables
 	public float moveSpeed = 5;
 	private bool onRight = true;
@@ -76,15 +78,19 @@ public class PlayerController : MonoBehaviour {
 		
 			
 		}
-		if (Input.GetKey (KeyCode.D)) 
+		if (Input.GetKey (KeyCode.D) || Input.GetKey (KeyCode.A)) 
 		{
-			superSpeedBoost = true;
-			superSpeed = 3.0f;
-		} else if (Input.GetKeyUp (KeyCode.D)) 
-		{
-			superSpeedBoost = false;
-			superSpeed = 0.0f;
-		}
+				if(Input.GetKey(KeyCode.RightShift))
+			   	{
+					superSpeedBoost = true;
+					superSpeed = 7.0f;
+				} 
+				else if (Input.GetKeyUp (KeyCode.RightShift)) 
+				{
+					superSpeedBoost = false;
+					superSpeed = 0.0f;
+				}
+			}
 	}
 	void FixedUpdate()
 	{
@@ -93,7 +99,7 @@ public class PlayerController : MonoBehaviour {
 		//walkinggg
 		float move = Input.GetAxis("Horizontal");
 		anim.SetFloat("speed", Mathf.Abs(move));
-		rigidbody2D.velocity = new Vector2(move * moveSpeed, rigidbody2D.velocity.y);
+		rigidbody2D.velocity = new Vector2(move * (moveSpeed + superSpeed), rigidbody2D.velocity.y);
 		if (move > 0 && (!onRight ))
 			Flip();
 		else if (move < 0 && onRight)
