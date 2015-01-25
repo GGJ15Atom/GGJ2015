@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour {
 	private Animator anim;
 	public GameObject brainZoom;
 
+	public bool brainToMain = false;
+
 	void Start () 
 	{
 		//renderer = GetComponent<MeshRenderer>();
@@ -68,8 +70,15 @@ public class PlayerController : MonoBehaviour {
 			brainScene.SetActive(true);
 			mainScene.SetActive(false);
 			brainZoom.SetActive(false);
+			zoomCheck =false;
+			rigidbody2D.isKinematic = true;
 		}
-		
+		if (brainToMain == true) 
+		{
+			mainScene.SetActive(true);
+			rigidbody2D.isKinematic = false;
+			brainToMain = false;
+		}
 		if (Input.GetKeyDown (KeyCode.W)) 
 		{
 			canJump = true;
@@ -163,6 +172,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			//Debug.Log("aha deydi");
 			zoomCheck = true;
+			Destroy(obj.gameObject);
 		}
 	}
 
