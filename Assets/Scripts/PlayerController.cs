@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject mainScene;
 	//Animation
 	private Animator anim;
-
+	public GameObject brainZoom;
 
 	void Start () 
 	{
@@ -49,25 +49,28 @@ public class PlayerController : MonoBehaviour {
         brainScene.SetActive(false);
         mainScene = GameObject.FindGameObjectWithTag("MainScene");
 		anim = GetComponent<Animator> ();
+		brainZoom = GameObject.FindGameObjectWithTag("BrainZoom");
+		brainZoom.SetActive(false);
 	}
 	void Update () 
 	{
-        if (zoomCheck == true && camera.orthographicSize > 0)
-        {
-            camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, camera.orthographicSize - 5, Time.deltaTime);
-            //brainScene.SetActive(true);
-            //mainScene.SetActive(false);    
-        }
-
-        if (zoomCheck == true && camera.orthographicSize <= 0)
-        {
-            //camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, camera.orthographicSize - 5, Time.deltaTime);
-            camera.GetComponent<AudioListener>().enabled = false;
-            brainScene.SetActive(true);
-            mainScene.SetActive(false);    
-        }
 		
-        if (Input.GetKeyDown (KeyCode.W)) 
+		if (zoomCheck == true && camera.orthographicSize > 0)
+		{
+			camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, camera.orthographicSize - 5, Time.deltaTime);
+			brainZoom.SetActive(true);
+			brainZoom.transform.position = new Vector3(camera.transform.position.x, camera.transform.position.y, 10);
+		}
+		
+		if (zoomCheck == true && camera.orthographicSize <= 0)
+		{
+			camera.GetComponent<AudioListener>().enabled = false;
+			brainScene.SetActive(true);
+			mainScene.SetActive(false);
+			brainZoom.SetActive(false);
+		}
+		
+		if (Input.GetKeyDown (KeyCode.W)) 
 		{
 			canJump = true;
 
